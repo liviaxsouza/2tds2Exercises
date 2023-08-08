@@ -32,3 +32,31 @@ main {
     border-radius: 8px;
     background-color: #FFF;
 }
+
+label,
+input,
+textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 500px;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    background-color: #D30000;
+    color: #FFF;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.25rem;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: #A00000;
+    transition: 0.3s;
+}
