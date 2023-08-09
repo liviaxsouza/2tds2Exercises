@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculadora de IMC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/style.calculadora.css" rel="stylesheet">
+    <script src="./assets/js/script.calculadora.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <main>
+        
+        <section id="secPicture">
+        <img src="./assets/images/picTrainer.svg" alt="">
+        </section>
+
+        <section id="secForm">
+        <div id="calculator">
+        <h1 id="title">Calculadora - IMC</h1>
+
+        <div class="inputBox">
+        <label for="inputWeight">Peso em kg</label>
+        <div class="inputField">
+        <i class="fa-solid fa-weight-hanging icon"></i>
+        <input type="number" id="inputWeight" required>
+        <span class="unit">kg</span>
+        </div>
+        </div>
+
+        <div class="inputBox">
+        <label for="inputHeight">Altura em metros</label>
+        <div class="inputField">
+        <i class="fa-solid fa-ruler icon"></i>
+        <input type="number" id="inputHeight" required>
+        <span class="unit">m</span>
+        </div>
+        </div>
+        <button onclick="calculateIMC()" id="btnCalculate">Calcular</button>
+        </div>
+
+        <div id="infos" class="hidden">
+            <div id="result">
+                <div id="imc">
+                    <span id="value" class="attention"></span>
+                    <span id="status">Seu IMC</span>
+                </div>
+
+                <div id="description">
+                    <span id="text"></span>
+                </div>
+            </div>
+        
+        <div id="moreInfos">
+            <a href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm" target="_blank">
+            Mais informações sobre o IMC
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+
+        </div>
+        </section>
+    </main>
+
+</body>
+</html>

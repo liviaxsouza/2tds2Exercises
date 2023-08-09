@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/*Reset CSS*/
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #18181B;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    gap: 3.5rem;
+}
+
+img {
+    width: 31rem;
+}
+
+#secForm {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: #F8FAFC;
+    background-color: #262626;
+    border-radius: 8px;
+    gap: 2rem;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#title {
+    color: white;
+}
+
+.inputBox label {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #CBD5E1;
+}
+
+.inputField {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3F3F46;
+    padding: 0.3rem;
+    border-radius: 4px;
+    margin-top: 2px;
+}
+
+.inputField input {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: 1.3rem;
+    color: #F8FAFC;
+    padding: 0 0.5rem;
+}
+
+.inputField input::-webkit-outer-spin-button,
+.inputField input::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+.unit,
+.icon {
+    color: #CBD5E1;
+    font-size: 1.3rem;
+    padding: 0.6rem 1rem;
+}
+
+#btnCalculate {
+    background-color: #FF0008;
+    border: none;
+    color: #F8FAFC;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.inputField input:focus {
+    outline: none;
+}
+
+#result {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border-top: 1px solid #FFFFFF34;
+    padding: 0.75rem 0;
+}
+
+
+/*#imc span :last-child*/
+#imc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.25rem;
+}
+
+#status {
+    font-size: 1.25rem;
+    color: #CBD5E1
+}
+
+.normal {
+    color: #16A34A; 
+}
+
+.attention {
+    color: #DC2626;
+}
+
+#description {
+    width: 15.5rem;
+}
+
+#moreInfos {
+    text-align: center;
+    border-top: 1px solid #FFFFFF34;
+    padding-top: 1.5rem;
+}
+
+#moreInfos a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    color: #16A34A;
+    font-size: 0.87rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#moreInfos a:hover {
+    color: #CBD5E1;
+}
+
+.hidden {
+    display: none;
+}
+
+#title {
+    font-size: 2.25rem;
+    position: relative;
+}
+
+#title::after {
+    position: absolute;
+    content: "";
+    width: 8rem;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #FF0008;
+    bottom: 0;
+    left: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    #secPicture {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #secPicture {
+        display: none;
+    }
+
+    main {
+        width: 100%;
+        height: 100%;
+    }
+
+    #secForm {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        justify-content: center;
+    }
+}
