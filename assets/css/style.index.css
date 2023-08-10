@@ -27,10 +27,11 @@ h2 {
     margin: 1.5rem;
 }
 
-#title::after {
+.divTitle::after {
+    margin-top: 0.5rem;
     position: absolute;
     content: "";
-    width: 12rem;
+    width: 34.5rem;
     height: 3px;
     border-radius: 3px;
     background-color: #6B6767;
