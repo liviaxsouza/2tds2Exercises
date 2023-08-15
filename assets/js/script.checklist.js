@@ -35,9 +35,15 @@ const taskList = new TaskList();
 
 function createTask() {
     let taskTitle = document.getElementById("field").value;
-    let task = new Task(randomId(), taskTitle, false);
 
-    taskList.addTask(task);
+    if (taskIndex < 0) {
+        let task = new Task(randomId(), taskTitle, false);
+    
+        taskList.addTask(task);
+    } else {
+        taskList.tasks[taskIndex].title = taskTitle;
+        taskIndex = -1;
+    }
 
     showTask();
 
@@ -72,9 +78,9 @@ function showTask() {
 }
 
 function editTask(index) {
-    const task = taskList.tasks[index];
+    const taskEdit = taskList.tasks[index];
 
-    document.getElementById("field").value = task.title;
+    document.getElementById("field").value = taskEdit.title;
 
     taskIndex = index;
 }
@@ -90,6 +96,5 @@ function deleteTask(index) {
 
 function checkTask(id) {
     taskList.checkTask(id);
-    console.log(id)
-    
 }
+

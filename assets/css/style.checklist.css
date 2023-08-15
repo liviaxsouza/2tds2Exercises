@@ -64,7 +64,7 @@ button {
     padding: 0.2rem;
     background-color: #e9e6e6;
     border-radius: 0.5rem;
-    width: 44.8vw;
+    max-width: 44.8vw;
 }
 
 .listFields {
@@ -97,5 +97,8 @@ button {
 }
 
 .checkGreen {
-    background-color: #11a611 !important;
+    border-radius: 8rem;
+    background-color: #11a611;
+    width: 2.8rem;
+    height: 2.5rem;
 }
