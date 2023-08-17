@@ -9,7 +9,7 @@ class Category {
 }
 
 // Produto pertence a uma categoria.
-class Products {
+class Product {
     constructor(id, name, price, category) {
         this.id = id;
         this.name = name;
@@ -28,6 +28,20 @@ class CategoryService {
         const id = this.nextCategoryId++;
         const category = new Category(id, name);
         this.categories.push(category);
+    }
+}
+
+class ProductService {
+    constructor() {
+        this.products = [];
+        this.nextProductId = 0;
+    }
+
+    addProduct(name, price, category) {
+        const id = this.nextProductId++;
+        const product = new Product(id, name, price, category);
+        Category.products.push(product);
+        this.products.push(product);
     }
 }
 
