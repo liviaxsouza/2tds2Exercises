@@ -13,12 +13,35 @@
     <h1>🛒 Categorias & Produtos</h1>
     <div class="formContainer">
         <h2>📂 Criar Categoria</h2>
-        <label for="">Nome da Categoria</label>
+        <label for="categoryName">Nome da Categoria:</label>
         <input type="text" id="categoryName">
         <button class="btn" onclick="createCategory()">Criar Categoria</button>
     </div>
 
+    <div class="formContainer">
+        <h2>📦 Criar Produto</h2>
+        <div id="productInfos">
+        <div class="productInputs">
+        <label for="">Nome do Produto:</label>
+        <input type="text" id="productName" required>
     </div>
-    
+        <div class="productInputs">
+            <label for="">Preço:</label>
+            <input type="number" id="productPrice" required>
+        </div>
+    </div>
+
+    <label for="">Categoria</label>
+    <select id="productCategory" required>
+        <option value="1">Categoria #1</option>
+    </select>
+    <button class="btn">Criar Produto</button>
+    </div>
+
+    <div class="listContainer">
+    <h2>📋 Categorias & Produtos</h2>
+    <ul id="categoriesList"></ul>
+    </div>
+</div>
 </body>
 </html>
