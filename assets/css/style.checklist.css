@@ -64,7 +64,8 @@ button {
     padding: 0.2rem;
     background-color: #e9e6e6;
     border-radius: 0.5rem;
-    max-width: 44.8vw;
+    max-width: 40.8vw;
+    height: 10vh;
 }
 
 .listFields {

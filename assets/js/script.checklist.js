@@ -56,11 +56,12 @@ function showTask() {
     
 
     taskList.tasks.forEach((task, index) => {
+        let verify = task.status ? "checkGreen" : "check";
         showContent += `
         <div class="divList-${task.id} divList">
             <div class="listFields">
             <p id="field">${task.title}</p>
-            <button id="check-${task.id}" class="check" onclick="checkTask(${task.id})">
+            <button id="check-${task.id}" class="${verify}" onclick="checkTask(${task.id})">
                 <i class="fa-solid fa-check" style="color: #000000;"></i>
             </button>
             <button id="edit-${task.id}" class="edit" onclick="editTask(${index})">
@@ -72,9 +73,13 @@ function showTask() {
             </div>
         </div>
         `;
+
+        
     })
 
     document.getElementById("checklist").innerHTML = showContent;
+
+
 }
 
 function editTask(index) {
@@ -97,4 +102,3 @@ function deleteTask(index) {
 function checkTask(id) {
     taskList.checkTask(id);
 }
-
