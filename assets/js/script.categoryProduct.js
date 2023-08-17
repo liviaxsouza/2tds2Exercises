@@ -50,12 +50,12 @@ const productList = new ProductService();
 
 function createCategory() {
     const categoryName = document.getElementById("categoryName").value;
-    console.log(categoryName);
     categoryList.addCategory(categoryName);
 
+    displayCategoriesAndProducts()
     clearFormFields();
 
-    console.log(categoryList.categories);
+    document.getElementById("categoriesList").innerHTML = categoryName;
 }
 
 function createProduct() {
@@ -71,5 +71,42 @@ function clearFormFields() {
     document.getElementById("productName").value = "";
     document.getElementById("productPrice").value = "";
     document.getElementById("productCategory").value = "";
+}
 
+function displayCategoriesAndProducts() {
+    let showContent = "";
+
+    categoryList.categories.forEach(category => {
+        showContent += `
+        <li>
+        <div class="categoriesList">
+        <span><b>Categoria: </b>${category.name}</span>
+
+        <div>
+            <button class="editButton" onclick="edit">Editar</button>
+            <button class="deleteButton" onclick="delete">Remover</button>
+        </div>
+        </div>
+
+        <ul class="productsListByCategory">`;
+        category.products.forEach(product => {
+            showContent += `
+            <li>
+            <div class="productList">
+            <span><b>Produto: </b>${product.name} - <b>Preço: </b>${product.price}<span>
+
+            <div>
+            <button class="editButton" onclick="edit">Editar</button>
+            <button class="deleteButton" onclick="delete">Remover</button>
+        </div>
+        </div>`;
+
+});
+showContent += `
+    </li>
+    </ul>  
+`
+});
+
+    document.getElementById("categoriesList").innerHTML = showContent;
 }
