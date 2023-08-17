@@ -45,23 +45,31 @@ class ProductService {
     }
 }
 
-const categoryService = new CategoryService();
-const productService = new ProductService();
+const categoryList = new CategoryService();
+const productList = new ProductService();
 
 function createCategory() {
-    const categoryName = "Doce";
+    const categoryName = document.getElementById("categoryName").value;
+    console.log(categoryName);
+    categoryList.addCategory(categoryName);
 
-    categoryService.addCategory(categoryName);
+    clearFormFields();
 
-    console.log(categoryService.categories);
+    console.log(categoryList.categories);
 }
 
 function createProduct() {
-    const productName = "Bolo";
-    const productPrice = 20;
-    const productCategory = categoryService.categories[0];
+    const productName = document.getElementById("productName").value;
+    const productPrice = document.getElementById("productPrice").value;
+    const productCategory = document.getElementById("productCategory").value;
 
-    productService.addProduct(productName, productPrice, productCategory);
+    productList.addProduct(productName, productPrice, productCategory);
+}
 
-    console.log(productService.products);
+function clearFormFields() {
+    document.getElementById("categoryName").value = "";
+    document.getElementById("productName").value = "";
+    document.getElementById("productPrice").value = "";
+    document.getElementById("productCategory").value = "";
+
 }
