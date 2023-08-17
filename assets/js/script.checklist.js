@@ -73,13 +73,9 @@ function showTask() {
             </div>
         </div>
         `;
-
-        
     })
 
     document.getElementById("checklist").innerHTML = showContent;
-
-
 }
 
 function editTask(index) {
