@@ -30,3 +30,13 @@ class CategoryService {
         this.categories.push(category);
     }
 }
+
+const categoryService = new CategoryService();
+
+function createCategory() {
+    const categoryName = "Doce";
+
+    categoryService.addCategory(categoryName);
+
+    console.log(categoryService.categories);
+}
