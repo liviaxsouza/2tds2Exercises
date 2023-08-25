@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Reset CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #E9E6E6;
+}
+
+#divContainer {
+    max-width: 50rem;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.5rem 0 #0000001A;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+h2 {
+    margin-top: 1.25rem;
+}
+
+.formContainer {
+    border: 1px solid #CCC;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 6px;
+    background-color: #E9E6E6;
+}
+
+.formContainer label {
+    display: block;
+    margin-bottom: 0.31rem;
+}
+
+.formContainer input, select {
+    width: 100%;
+    padding: 0.62rem;
+    margin-bottom: 0.62rem;
+    border-radius: 6px;
+    border: 1px solid #CCC;
+    box-sizing: border-box;
+}
+
+#productInfos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.62rem;
+}
+
+.productInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.btn {
+    background-color: #FD1B1B;
+    color: #FFF;
+    padding: 0.62rem 1.25rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #E60E0E;
+    color: #FFF;
+    transform: scale(1.02);
+}
+
+.listContainer {
+    background-color: #E9E6E6;
+    padding: 1rem;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+.listContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.listContainer li {
+    margin-bottom: 0.62rem;
+    padding: 0.62rem;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 6px;
+}
+
+.categoriesList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editButton {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 0.62rem 1.25rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.editButton:hover {
+    background-color: #0069D9;
+    color: #FFF;
+    transform: scale(1.02);
+}
+
+.deleteButton {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 0.62rem 1.25rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.deleteButton:hover {
+    background-color: #1A1A1A;
+    color: #FFF;
+    transform: scale(1.02);
+}

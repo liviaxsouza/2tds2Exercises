@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./../assets/css/style.categoryProduct.css" rel="stylesheet">
+    <script src="./../assets/js/script.categoryProduct.js"></script>
+</head>
+<body>
+
+    <div id="divContainer">
+    <h1>🛒 Categorias & Produtos</h1>
+    <div class="formContainer">
+        <h2>📂 Criar Categoria</h2>
+        <label for="categoryName">Nome da Categoria:</label>
+        <input type="text" id="categoryName">
+        <button class="btn" onclick="createCategory()">Criar Categoria</button>
+    </div>
+
+    <div class="formContainer">
+        <h2>📦 Criar Produto</h2>
+        <div id="productInfos">
+        <div class="productInputs">
+        <label for="">Nome do Produto:</label>
+        <input type="text" id="productName" required>
+    </div>
+        <div class="productInputs">
+            <label for="">Preço:</label>
+            <input type="number" id="productPrice" required>
+        </div>
+    </div>
+
+    <label for="">Categoria</label>
+    <select id="productCategory" required>
+        <option value="1">Categoria #1</option>
+    </select>
+    <button class="btn" onclick="createProduct()">Criar Produto</button>
+    </div>
+
+    <div class="listContainer">
+    <h2>📋 Categorias & Produtos</h2>
+    <ul id="categoriesList"></ul>
+    </div>
+</div>
+</body>
+</html>
