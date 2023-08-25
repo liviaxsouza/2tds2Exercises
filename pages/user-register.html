@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../assets/css/style.user-register.css">
+    <script src="./../assets/js/script.user-register.js"></script>
+    <title>Cadastro de Usuário</title>
+</head>
+
+<body>
+    <h1 id="titlePage">Acontecendo agora</h1>
+
+    <div id="mainDiv">
+
+        <div id="userForm">
+            <h2>Inscreva-se hoje</h2>
+            <label for="inputName">Nome</label>
+            <input type="text" id="inputName" placeholder="João Silva" required>
+
+            <label for="inputEmail">Email</label>
+            <input type="email" id="inputEmail" placeholder="joaosilva@gmail.com" required>
+
+            <label for="inputBirthDate">Data de Nascimento</label>
+            <input type="date" id="inputBirthDate" required>
+
+            <label for="inputAddress">Cidade</label>
+            <input type="text" id="inputAddress" placeholder="São Paulo" required>
+
+            <label for="inputPhone">Telefone</label>
+            <input type="tel" id="inputPhone" maxlength="11" placeholder="11998738123" required>
+
+            <label for="inputCpf">CPF</label>
+            <input type="text" id="inputCpf" maxlength="11" placeholder="36045717074" required>
+            
+            <div id="divErrorMsg">
+                <p id="errorMsg" class="hidden">Error</p>
+            </div>
+
+            <div id="divSuccessMsg">
+                <p id="successMsg" class="hidden">Sucesso</p>
+            </div>
+
+            <div id="divButton">
+                <button id="buttonRegister" onclick="createUser()" type="button">Entrar na lista de espera</button>
+                <button id="buttonRegister" onclick="renderContent()" type="button">Ver lista de espera</button>
+            </div>
+        </div>
+
+        <div id="resultDiv">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="logo">
+                <g>
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                    </path>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div id="subDiv" class="hidden">
+        <div id="buttonBack">
+            <button id="buttonRegister" onclick="showRegister()" type="button">Voltar</button>
+        </div>
+        <div id="divCount">
+            <p id="pContador">Contador</p>
+        </div>
+        <div id="mainSubDiv">
+            <div id="userList">
+
+            </div>
+            <div id="resultDiv2">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="logo">
+                    <g>
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                        </path>
+                    </g>
+                </svg>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
