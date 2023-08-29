@@ -15,15 +15,17 @@ class PetsList {
 
     addPet(pet) {
         if (isAnyInputEmpty()) {
-            sendErrorMsg("Por favor, preencha todos os campos.")
-        } else {
-            sendSuccessMsg("Seu Pet foi cadastrado!")
+            sendErrorMsg("Por favor, preencha todos os campos.", "error")
+        } else if (!isURLValid(pet.pic)) {
+            sendErrorMsg("URL inválida.", "error")
+        } 
+        else {
+            sendSuccessMsg("Seu Pet foi cadastrado!", "success")
             this.pets.push(pet);
             clearInputs();
             showPets();
         }
     }
-
 }
 
 const petsList = new PetsList();
@@ -52,14 +54,14 @@ function showPets() {
     let showContent = '';
 
     petsList.pets.forEach(pet => {
+        console.log(pet.pic);
         showContent = `
         <div class="divEachPet">
         <p><strong>Tutor: </strong>${pet.tutor}</p>
         <p><strong>Nome do Pet: </strong>${pet.name}</p>
         <p><strong>Espécie: </strong>${pet.specie}</p>
-        <p><strong>Fotinha: </strong>${pet.pic}</p>
         <p><strong>Data de Nascimento: </strong>${dateInPTBR(pet.birthdate)}</p>
-
+        <img src="${pet.pic}">
         </div>
         `
     });
@@ -83,6 +85,14 @@ function isAnyInputEmpty() {
     petBirthdate = document.getElementById("inputBirthdate").value;
 
     if (petTutor == "" || petName == "" || petSpecie == "" || petPic == "" || petBirthdate == "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isURLValid(url) {
+    if(url.match(/\.(jpeg|jpg|gif|png)$/) != null){
         return true;
     } else {
         return false;
