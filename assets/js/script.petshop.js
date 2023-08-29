@@ -14,7 +14,13 @@ class PetsList {
     }
 
     addPet(pet) {
-        this.pets.push(pet);
+        if (isAnyInputEmpty()) {
+            sendErrorMsg("Por favor, preencha todos os campos.")
+        } else {
+            sendSuccessMsg("Seu Pet foi cadastrado!")
+            this.pets.push(pet);
+            clearInputs();
+        }
     }
 
 }
@@ -34,5 +40,41 @@ function createPet() {
 }
 
 function clearInputs() {
-    
+    petTutor = document.getElementById("inputTutor").value = "";
+    petName = document.getElementById("inputName").value = "";
+    petSpecie = document.getElementById("inputSpecie").value = "";
+    petPic = document.getElementById("inputPic").value = "";
+    petBirthdate = document.getElementById("inputBirthdate").value = "";
+}
+
+function isAnyInputEmpty() {
+    petTutor = document.getElementById("inputTutor").value;
+    petName = document.getElementById("inputName").value;
+    petSpecie = document.getElementById("inputSpecie").value;
+    petPic = document.getElementById("inputPic").value;
+    petBirthdate = document.getElementById("inputBirthdate").value;
+
+    if (petTutor == "" || petName == "" || petSpecie == "" || petPic == "" || petBirthdate == "") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function sendErrorMsg(msg) {
+
+    document.getElementById("errorMsg").innerHTML = msg;
+    document.getElementById("errorMsg").classList.remove("hidden");
+    setTimeout(function () {
+        document.getElementById("errorMsg").classList.add("hidden");
+    }, 4000);
+}
+
+function sendSuccessMsg(msg) {
+
+    document.getElementById("successMsg").innerHTML = msg;
+    document.getElementById("successMsg").classList.remove("hidden");
+    setTimeout(function () {
+        document.getElementById("successMsg").classList.add("hidden");
+    }, 4000);
 }
