@@ -5,6 +5,27 @@ class Pet {
         this.specie = specie;
         this.pic = pic;
         this.birthdate = birthdate;
+        this.age = this.calculateAge();
+    }
+
+    calculateAge() {
+        const actualDate = new Date();
+        const birthDate = new Date(this.birthdate);
+
+        const actualYear = actualDate.getFullYear();
+        const actualMonth = actualDate.getMonth() + 1; // Mês começa em 0, então somamos 1
+        const actualDay = actualDate.getDate();
+
+        const birthYear = birthDate.getFullYear();
+        const birthMonth = birthDate.getMonth() + 1;
+        const birthDay = birthDate.getDate();
+
+        let userAge = actualYear - birthYear;
+
+        if ((actualMonth < birthMonth) || (actualMonth === birthMonth && actualDay < birthDay)) {
+            userAge--;
+        }
+        return userAge;
     }
 }
 
@@ -23,8 +44,11 @@ class PetsList {
             sendSuccessMsg("Seu Pet foi cadastrado!", "success")
             this.pets.push(pet);
             clearInputs();
-            showPets();
         }
+    }
+
+    countPets() {
+        return this.pets.length;
     }
 }
 
@@ -55,12 +79,13 @@ function showPets() {
 
     petsList.pets.forEach(pet => {
         console.log(pet.pic);
-        showContent = `
+        showContent += `
         <div class="divEachPet">
         <p><strong>Tutor: </strong>${pet.tutor}</p>
         <p><strong>Nome do Pet: </strong>${pet.name}</p>
         <p><strong>Espécie: </strong>${pet.specie}</p>
         <p><strong>Data de Nascimento: </strong>${dateInPTBR(pet.birthdate)}</p>
+        <p><strong>Idade: </strong>${pet.age}</p>
         <img src="${pet.pic}">
         </div>
         `
@@ -101,18 +126,36 @@ function isURLValid(url) {
 
 function sendErrorMsg(msg) {
 
-    document.getElementById("errorMsg").innerHTML = msg;
-    document.getElementById("errorMsg").classList.remove("hidden");
+    document.getElementById("divError").innerHTML = msg;
+    document.getElementById("divError").classList.remove("hidden");
     setTimeout(function () {
-        document.getElementById("errorMsg").classList.add("hidden");
-    }, 4000);
+        document.getElementById("divError").classList.add("hidden");
+    }, 2000);
 }
 
 function sendSuccessMsg(msg) {
 
-    document.getElementById("successMsg").innerHTML = msg;
-    document.getElementById("successMsg").classList.remove("hidden");
+    document.getElementById("divSuccess").innerHTML = msg;
+    document.getElementById("divSuccess").classList.remove("hidden");
     setTimeout(function () {
-        document.getElementById("successMsg").classList.add("hidden");
-    }, 4000);
+        document.getElementById("divSuccess").classList.add("hidden");
+    }, 2000);
+}
+
+function showRegister() {
+    document.getElementById("subDiv").classList.add("hidden");
+    document.getElementById("mainDiv").classList.remove("hidden");
+}
+
+function renderContent() {
+    let isThereAnyRegister = petsList.countPets();
+
+    if (isThereAnyRegister != 0) {
+        document.getElementById("subDiv").classList.remove("hidden");
+        document.getElementById("mainDiv").classList.add("hidden");
+        showPets();
+    }
+    else {
+        sendErrorMsg("Nenhum Pet foi cadastrado.", "error")
+    }
 }

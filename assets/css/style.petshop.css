@@ -1,14 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
 /* Reset CSS */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+header {
+    background-color: #1D7044;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+footer {
+    background-color: #1D7044;
+    text-align: center;
+    font-size: 12px;
+    padding: 1.2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #FFF;
+}
+
+.btnHeader {
+    background-color: #1D7044;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+h1 {
+    color: #FFF;
+}
+
+h2 {
+    color: #1D7044;
+    text-align: center;
+    padding: 0.3rem;
+}
+
+#mainDiv {
+    margin-top: 7.2rem;
+}
+
+#divInputs {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 0.3rem;
+}
+
+#divIcon {
+    width: 50%;
+}
+
+#divIconInputs {
+    display: flex;
+}
+
+#iconDog {
+    width: 50%;
+    height: 50%;
+}
+
+label {
+    color: #1D7044;
+}
+
+.inputs {
+    width: 85%;
+    height: 2rem;
+}
+
+#btnRegister {
+    border: 1px solid #1D7044;
+    background-color: #1D7044;
+    padding: 0.4rem;
+    border-radius: 8px;
+    color: #FFF;
 }
 
 .error {
@@ -17,4 +100,8 @@ body {
 
 .success {
     color: green;
+}
+
+.hidden {
+    display: none !important;
 }

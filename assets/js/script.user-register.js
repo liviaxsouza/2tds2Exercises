@@ -164,7 +164,6 @@ function isAnyInputEmpty() {
 }
 
 function showRegister() {
-
     document.getElementById("subDiv").classList.add("hidden");
     document.getElementById("titlePage").classList.remove("hidden");
     document.getElementById("mainDiv").classList.remove("hidden");
