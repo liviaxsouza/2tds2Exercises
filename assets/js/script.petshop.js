@@ -36,12 +36,11 @@ class PetsList {
 
     addPet(pet) {
         if (isAnyInputEmpty()) {
-            sendErrorMsg("Por favor, preencha todos os campos.", "error")
+            sendMsg("Por favor, preencha todos os campos.", "error");
         } else if (!isURLValid(pet.pic)) {
-            sendErrorMsg("URL inválida.", "error")
-        } 
-        else {
-            sendSuccessMsg("Seu Pet foi cadastrado!", "success")
+            sendMsg("URL inválida.", "error"); 
+        } else {
+            sendMsg("Seu Pet foi cadastrado!", "success");
             this.pets.push(pet);
             clearInputs();
         }
@@ -81,12 +80,16 @@ function showPets() {
         console.log(pet.pic);
         showContent += `
         <div class="divEachPet">
+        <div id="divText">
         <p><strong>Tutor: </strong>${pet.tutor}</p>
         <p><strong>Nome do Pet: </strong>${pet.name}</p>
         <p><strong>Espécie: </strong>${pet.specie}</p>
         <p><strong>Data de Nascimento: </strong>${dateInPTBR(pet.birthdate)}</p>
         <p><strong>Idade: </strong>${pet.age}</p>
-        <img src="${pet.pic}">
+        </div>
+        <div id="divImg">
+        <img src="${pet.pic}" class="imgEachPet">
+        </div>
         </div>
         `
     });
@@ -124,21 +127,18 @@ function isURLValid(url) {
     }
 }
 
-function sendErrorMsg(msg) {
+function sendMsg(msg, msgType) {
+    let msgDiv = document.getElementById("divMsg");
+    msgDiv.innerHTML = "";
 
-    document.getElementById("divError").innerHTML = msg;
-    document.getElementById("divError").classList.remove("hidden");
-    setTimeout(function () {
-        document.getElementById("divError").classList.add("hidden");
-    }, 2000);
-}
+    let showMsg = `
+    <p class="${msgType}">${msg}</p>
+    `
 
-function sendSuccessMsg(msg) {
+    msgDiv.innerHTML += showMsg;
 
-    document.getElementById("divSuccess").innerHTML = msg;
-    document.getElementById("divSuccess").classList.remove("hidden");
-    setTimeout(function () {
-        document.getElementById("divSuccess").classList.add("hidden");
+    setTimeout(function() {
+        msgDiv.innerHTML = "";
     }, 2000);
 }
 
@@ -156,6 +156,6 @@ function renderContent() {
         showPets();
     }
     else {
-        sendErrorMsg("Nenhum Pet foi cadastrado.", "error")
+        sendMsg("Nenhum Pet foi cadastrado.", "error")
     }
 }

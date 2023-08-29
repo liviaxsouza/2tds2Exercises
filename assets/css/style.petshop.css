@@ -17,8 +17,8 @@ body {
 header {
     background-color: #1D7044;
     text-align: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -47,14 +47,16 @@ h1 {
     color: #FFF;
 }
 
+/* Style Main Div */
+
 h2 {
     color: #1D7044;
     text-align: center;
-    padding: 0.3rem;
 }
 
 #mainDiv {
-    margin-top: 7.2rem;
+    margin-top: 6.5rem;
+    bottom: 0;
 }
 
 #divInputs {
@@ -62,19 +64,22 @@ h2 {
     flex-direction: column;
     width: 50%;
     gap: 0.3rem;
+    margin-top: 0.5rem;
 }
 
 #divIcon {
+    margin-top: 2.4rem;
     width: 50%;
+    text-align: center;
 }
 
 #divIconInputs {
     display: flex;
 }
 
-#iconDog {
-    width: 50%;
-    height: 50%;
+#icon {
+    text-align: center;
+    font-size: 250px;
 }
 
 label {
@@ -92,16 +97,60 @@ label {
     padding: 0.4rem;
     border-radius: 8px;
     color: #FFF;
+    margin: 0;
 }
 
 .error {
     color: red;
+    font-size: 15px;
 }
 
 .success {
     color: green;
+    font-size: 15px;
 }
 
 .hidden {
     display: none !important;
+}
+
+/* Style Sub Div */
+
+#listPet {
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    padding: 5rem;
+}
+
+.divEachPet {
+    margin-top: 2.8rem;
+    padding: 1rem;
+    width: 16rem;
+    height: 25rem;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(29,112,68,1);
+-moz-box-shadow: 0px 0px 5px 0px rgba(29,112,68,1);
+box-shadow: 0px 0px 5px 0px rgba(29,112,68,1);
+}
+
+.imgEachPet {
+    width: 160px;
+    height: 220px;
+}
+
+#divText {
+    width: 100%;
+    height: 40%;
+}
+
+#divImg {
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    justify-content: center;
 }
