@@ -20,6 +20,7 @@ class PetsList {
             sendSuccessMsg("Seu Pet foi cadastrado!")
             this.pets.push(pet);
             clearInputs();
+            showPets();
         }
     }
 
@@ -29,7 +30,7 @@ const petsList = new PetsList();
 
 function createPet() {
     let petTutor = document.getElementById("inputTutor").value;
-    let petName = document.getElementById("inputName").value;
+    let petName = document.getElementById("inputPet").value;
     let petSpecie = document.getElementById("inputSpecie").value;
     let petPic = document.getElementById("inputPic").value;
     let petBirthdate = document.getElementById("inputBirthdate").value;
@@ -41,15 +42,42 @@ function createPet() {
 
 function clearInputs() {
     petTutor = document.getElementById("inputTutor").value = "";
-    petName = document.getElementById("inputName").value = "";
+    petName = document.getElementById("inputPet").value = "";
     petSpecie = document.getElementById("inputSpecie").value = "";
     petPic = document.getElementById("inputPic").value = "";
     petBirthdate = document.getElementById("inputBirthdate").value = "";
 }
 
+function showPets() {
+    let showContent = '';
+
+    petsList.pets.forEach(pet => {
+        showContent = `
+        <div class="divEachPet">
+        <p><strong>Tutor: </strong>${pet.tutor}</p>
+        <p><strong>Nome do Pet: </strong>${pet.name}</p>
+        <p><strong>Espécie: </strong>${pet.specie}</p>
+        <p><strong>Fotinha: </strong>${pet.pic}</p>
+        <p><strong>Data de Nascimento: </strong>${dateInPTBR(pet.birthdate)}</p>
+
+        </div>
+        `
+    });
+
+    document.getElementById("listPet").innerHTML = showContent;
+}
+
+function dateInPTBR(date) {
+    const parts = date.split('-');
+  
+  const dateBr = `${parts[2]}/${parts[1]}/${parts[0]}`;
+  
+  return dateBr;
+}
+
 function isAnyInputEmpty() {
     petTutor = document.getElementById("inputTutor").value;
-    petName = document.getElementById("inputName").value;
+    petName = document.getElementById("inputPet").value;
     petSpecie = document.getElementById("inputSpecie").value;
     petPic = document.getElementById("inputPic").value;
     petBirthdate = document.getElementById("inputBirthdate").value;
