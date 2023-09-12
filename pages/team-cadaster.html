@@ -2,9 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./../assets/images/logoWarriors.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Equipes</title>
-    <link rel="stylesheet" href="./../assets/css/style.crud.css">
+    <link rel="stylesheet" href="./../assets/css/style.team-cadaster.css">
 </head>
 
 <body>
@@ -18,12 +19,17 @@
         <input id="input-holders" type="number">
     </div>
 
-    <button onclick="createTeam()">Cadastrar</button>
+    <button id="btn-cadaster" onclick="createTeam()">Cadastrar</button>
+    <button id="btn-edit" class="hidden" onclick="editTeam()">Editar</button>
 
     <div id="list-teams">
 
     </div>
 
-    <script src="./../assets/js/script.crud.js"></script>
+    <div id="list-single-team">
+
+    </div>
+
+    <script src="./../assets/js/script.team-cadaster.js"></script>
 </body>
 </html>
