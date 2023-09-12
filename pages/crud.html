@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Equipes</title>
+    <link rel="stylesheet" href="./../assets/css/style.crud.css">
+</head>
+
+<body>
+
+    <h2>Cadastro de Equipes</h2>
+    
+    <div>
+        <label for="input-name">Nome da equipe</label>
+        <input id="input-name" type="text">
+        <label for="input-holders">Quantidade de jogadores titulares</label>
+        <input id="input-holders" type="number">
+    </div>
+
+    <button onclick="createTeam()">Cadastrar</button>
+
+    <div id="list-teams">
+
+    </div>
+
+    <script src="./../assets/js/script.crud.js"></script>
+</body>
+</html>

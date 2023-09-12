@@ -18,7 +18,7 @@ class TaskList {
     checkTask(id){
         this.tasks.forEach(task => {
             if(task.id == id){
-                task.status = !task.status // Nego aqui pq posso desmarcar tbm
+                task.status = !task.status;
             }
         });
 

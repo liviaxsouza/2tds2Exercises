@@ -13,7 +13,7 @@ class Pet {
         const birthDate = new Date(this.birthdate);
 
         const actualYear = actualDate.getFullYear();
-        const actualMonth = actualDate.getMonth() + 1; // Mês começa em 0, então somamos 1
+        const actualMonth = actualDate.getMonth() + 1;
         const actualDay = actualDate.getDate();
 
         const birthYear = birthDate.getFullYear();

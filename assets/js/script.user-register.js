@@ -86,7 +86,7 @@ class UsersList {
         sendErrorMsg("CPF já cadastrado.");
     } else {
         this.users.push(user);
-        sendSuccessMsg("Você foi registrado na lista de espera!")
+        sendSuccessMsg("Você foi registrado na lista de espera!" , "success")
         clearInputs();
         showUsers()
     }
